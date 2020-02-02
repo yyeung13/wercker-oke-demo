@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: get-ip-server
-        image: ${DOCKER_REPO}:latest
+        image: iad.ocir.io/${DOCKER_REPO}:latest
         ports:
         - name: get-ip-server
           containerPort: 8080
