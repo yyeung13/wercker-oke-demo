@@ -46,6 +46,13 @@ deploy-to-kubernetes:
         server: $OKE_MASTER
         token: $OKE_TOKEN
         insecure-skip-tls-verify: true
+        command: delete -f $WERCKER_OUTPUT_DIR/kubernetes/
+        
+    - kubectl:
+        name: deploy to kubernetes
+        server: $OKE_MASTER
+        token: $OKE_TOKEN
+        insecure-skip-tls-verify: true
         command: apply -f $WERCKER_OUTPUT_DIR/kubernetes/
 
     # Tell Kubernetes that we're going to wait 60 seconds for the deploy to be successful
