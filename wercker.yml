@@ -41,12 +41,12 @@ deploy-to-kubernetes:
           mv kubernetes_*.yml $WERCKER_OUTPUT_DIR/kubernetes
 
     # `apply` is a good command to use here, as it'll create Kubernetes entities if they are missing.
-    - kubectl:
-        name: deploy to kubernetes
-        server: $OKE_MASTER
-        token: $OKE_TOKEN
-        insecure-skip-tls-verify: true
-        command: delete -f $WERCKER_OUTPUT_DIR/kubernetes/
+    #- kubectl:
+    #    name: deploy to kubernetes
+    #    server: $OKE_MASTER
+    #    token: $OKE_TOKEN
+    #    insecure-skip-tls-verify: true
+    #    command: delete -f $WERCKER_OUTPUT_DIR/kubernetes/
         
     - kubectl:
         name: deploy to kubernetes
